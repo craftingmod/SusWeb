@@ -15,7 +15,12 @@ dependencies:
   - $libs.nucleus.webview
   # HTTP
   - $libs.ktor.client.core
+  - $libs.kotlinx.serialization.json
   - $libs.ksoup
+  - $libs.ksafe
+  - $libs.datastore.preferences.core
+test-dependencies:
+  - $libs.ktor.client.mock
 dependencies@android:
   - $compose.uiTooling
   - $libs.ktor.client.okhttp

@@ -22,7 +22,8 @@ fun main(args: Array<String>) =
     nucleusApplication(
         args = args,
         backend = NucleusBackend.Tao,
-        enableSingleInstance = false,
+        // KSafe uses a single-process store coordinator.
+        enableSingleInstance = true,
     ) {
         SusWebTheme {
             MiuixWindowTheme {
