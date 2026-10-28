@@ -12,6 +12,7 @@ dependencies:
   - $compose.hotReload.runtimeApi
   - $libs.androidx.lifecycle.viewmodel.compose
   - $libs.androidx.lifecycle.runtime.compose
+  - $libs.nucleus.webview
   # HTTP
   - $libs.ktor.client.core
   - $libs.ksoup

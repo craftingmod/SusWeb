@@ -2,7 +2,8 @@
 logback = "1.6.2"
 androidx-activity-compose = "1.13.0"
 androidx-lifecycle = "2.11.0"
-kotlinx-coroutines = "1.11.0"
+nucleus = "2.5.18"
+nucleus-webview = "1.0.3"
 ktor = "3.6.0"
 ksoup = "0.2.6"
 
@@ -11,7 +12,10 @@ logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "lo
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity-compose" }
 androidx-lifecycle-viewmodel-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
-kotlinx-coroutines-swing = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+nucleus-application = { module = "dev.nucleusframework:nucleus.nucleus-application", version.ref = "nucleus" }
+nucleus-window-tao = { module = "dev.nucleusframework:nucleus.decorated-window-tao", version.ref = "nucleus" }
+nucleus-window-material3 = { module = "dev.nucleusframework:nucleus.decorated-window-material3", version.ref = "nucleus" }
+nucleus-webview = { module = "dev.nucleusframework:composewebview", version.ref = "nucleus-webview" }
 # HTTP handling
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }

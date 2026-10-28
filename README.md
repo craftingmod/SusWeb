@@ -13,6 +13,31 @@ Use the run configurations provided by the run widget in your IDE's toolbar. You
 - Android app: `./kotlin run -m androidApp`
 - Desktop app: `./kotlin run -m desktopApp`
 
+### Nucleus WebView
+
+The shared screen uses `dev.nucleusframework:composewebview:1.0.3`. Desktop uses
+Nucleus 2.5.18 with the Tao backend and Material 3 window chrome. Versions are
+pinned in `libs.versions.toml`. The initial page is `https://nucleusframework.dev`;
+change `HOME_URL` in `shared/src/App.kt` to use another page. The toolbar provides
+back, forward, reload, and home actions, with loading and error feedback.
+
+On Windows, run `bun run start` (or `./kotlin.bat run -m desktopApp`). The WebView
+requires Microsoft Edge WebView2 Runtime. Android uses the system WebView and
+declares the `INTERNET` permission. Linux requires WebKit2GTK; macOS uses WKWebView.
+Only Windows desktop rendering has been checked locally; Android has been built
+and unit tested, but its WebView has not been checked on a device.
+
+The migration follows the [Nucleus migration guide](https://nucleusframework.dev/nucleus-migrate.md)
+and [WebView setup](https://nucleusframework.dev/en/docs/webview/getting-started/).
+This project keeps Kotlin Toolchain (Amper), so runtime dependencies are declared
+in `module.yaml` rather than applying the guide's Gradle packaging plugin.
+Installer packaging, auto-update, GraalVM, and CI are outside this migration.
+`nucleusApplication` explicitly selects Tao and disables its default single-instance
+lock to preserve the previous ability to run multiple app instances. The direct
+`kotlinx-coroutines-swing` dependency has been removed: Tao provides its own main
+dispatcher. Desktop WebView screens must be run in the Tao host window rather than
+an AWT window or a standalone Compose preview.
+
 ### Testing
 
 Run the project's tests with `./kotlin test`, or `./kotlin test -m <module>` for a single module.

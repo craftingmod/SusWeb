@@ -3,8 +3,11 @@ product: jvm/app
 dependencies:
   - //shared
   - $compose.desktop.currentOs
+  - $compose.material3
   - $compose.preview
-  - $libs.kotlinx.coroutines.swing
+  - $libs.nucleus.application
+  - $libs.nucleus.window.tao
+  - $libs.nucleus.window.material3
   - $libs.logback.classic
 
 settings:
