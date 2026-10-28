@@ -1,0 +1,21 @@
+{
+  "name": "susweb",
+  "private": true,
+  "scripts": {
+    "kotlin": "bun scripts/kotlin.ts",
+    "build": "bun scripts/kotlin.ts build",
+    "build:desktop": "bun scripts/kotlin.ts build -m desktopApp",
+    "build:android": "bun scripts/kotlin.ts build -m androidApp",
+    "start": "bun scripts/kotlin.ts run -m desktopApp",
+    "test": "bun scripts/kotlin.ts test",
+    "typecheck": "bun check"
+  },
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  }
+}

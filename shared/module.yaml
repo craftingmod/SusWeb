@@ -12,9 +12,14 @@ dependencies:
   - $compose.hotReload.runtimeApi
   - $libs.androidx.lifecycle.viewmodel.compose
   - $libs.androidx.lifecycle.runtime.compose
-
+  # HTTP
+  - $libs.ktor.client.core
+  - $libs.ksoup
 dependencies@android:
   - $compose.uiTooling
+  - $libs.ktor.client.okhttp
+dependencies@jvm:
+  - $libs.ktor.client.okhttp
 
 settings:
   compose:

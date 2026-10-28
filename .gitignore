@@ -9,3 +9,6 @@ captures
 !**/module.xcodeproj/project.xcworkspace/
 **/xcshareddata/WorkspaceSettings.xcsettings
 xcuserdata
+
+# Nodejs
+node_modules
