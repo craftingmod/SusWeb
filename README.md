@@ -17,6 +17,16 @@ Use the run configurations provided by the run widget in your IDE's toolbar. You
 
 Run the project's tests with `./kotlin test`, or `./kotlin test -m <module>` for a single module.
 
+### Kotlin formatting
+
+Requires Bun and Java 17+ (`java` on `PATH`, falling back to `JAVA_HOME`). The first run downloads
+ktfmt 0.65, verifies its SHA-256 checksum, and caches it under `build/tools/ktfmt/`.
+
+- `bun run ktfmt`: format Kotlin files in `shared`, `androidApp`, and `desktopApp` using the Kotlin style (4-space indentation).
+- `bun run ktfmt:check`: check formatting without modifying files; exit with a nonzero status if changes are needed.
+- `bun run ktfmt shared/src/App.kt`: format a specific file. Explicit arguments replace the default module paths.
+- `bun run ktfmt --help`: show ktfmt CLI options.
+
 ---
 
 Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html), [Kotlin Toolchain](https://kotlin-toolchain.org/dev/), [Compose Multiplatform](https://kotlinlang.org/compose-multiplatform/).

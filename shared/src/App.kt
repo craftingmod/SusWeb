@@ -1,5 +1,7 @@
 package alyac.kotlin.susweb
 
+import alyac.kotlin.susweb.resources.Res
+import alyac.kotlin.susweb.resources.compose_multiplatform
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -17,9 +19,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import org.jetbrains.compose.reload.DevelopmentEntryPoint
 import org.jetbrains.compose.resources.painterResource
 
-import alyac.kotlin.susweb.resources.Res
-import alyac.kotlin.susweb.resources.compose_multiplatform
-
 @Composable
 @Preview
 @DevelopmentEntryPoint
@@ -27,10 +26,10 @@ fun App() {
     MaterialTheme {
         var showContent by remember { mutableStateOf(false) }
         Column(
-            modifier = Modifier
-                .background(MaterialTheme.colorScheme.primaryContainer)
-                .safeContentPadding()
-                .fillMaxSize(),
+            modifier =
+                Modifier.background(MaterialTheme.colorScheme.primaryContainer)
+                    .safeContentPadding()
+                    .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Button(onClick = { showContent = !showContent }) {
