@@ -3,18 +3,11 @@ package alyac.kotlin.susweb
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeContentPadding
-import androidx.compose.material3.Button
-import androidx.compose.material3.LinearProgressIndicator
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -22,13 +15,20 @@ import dev.nucleusframework.webview.web.WebView
 import dev.nucleusframework.webview.web.rememberWebViewNavigator
 import dev.nucleusframework.webview.web.rememberWebViewState
 import org.jetbrains.compose.reload.DevelopmentEntryPoint
+import top.yukonga.miuix.kmp.basic.Button
+import top.yukonga.miuix.kmp.basic.LinearProgressIndicator
+import top.yukonga.miuix.kmp.basic.Surface
+import top.yukonga.miuix.kmp.basic.Text
+import top.yukonga.miuix.kmp.theme.MiuixTheme
+import top.yukonga.miuix.kmp.theme.darkColorScheme
+import top.yukonga.miuix.kmp.theme.lightColorScheme
 
 private const val HOME_URL = "https://nucleusframework.dev"
 
 @Composable
 fun SusWebTheme(content: @Composable () -> Unit) {
-    MaterialTheme(
-        colorScheme = if (isSystemInDarkTheme()) darkColorScheme() else lightColorScheme(),
+    MiuixTheme(
+        colors = if (isSystemInDarkTheme()) darkColorScheme() else lightColorScheme(),
         content = content,
     )
 }
@@ -42,9 +42,10 @@ fun App() {
 
         Surface(Modifier.fillMaxSize()) {
             Column(Modifier.fillMaxSize().safeContentPadding()) {
-                Row(
+                FlowRow(
                     modifier = Modifier.fillMaxWidth().padding(8.dp),
                     horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
                     Button(onClick = navigator::navigateBack, enabled = navigator.canGoBack) {
                         Text("뒤로")
@@ -65,7 +66,7 @@ fun App() {
                 if (state.errorsForCurrentRequest.isNotEmpty()) {
                     Text(
                         text = "페이지를 불러오지 못했습니다. 네트워크 연결을 확인하고 새로고침하세요.",
-                        color = MaterialTheme.colorScheme.error,
+                        color = MiuixTheme.colorScheme.error,
                         modifier = Modifier.padding(16.dp),
                     )
                 }

@@ -5,7 +5,7 @@ product:
 dependencies:
   - $compose.runtime
   - $compose.foundation
-  - $compose.material3
+  - $libs.miuix.ui
   - $compose.ui
   - $compose.components.resources
   - $compose.preview

@@ -4,6 +4,7 @@ dependencies:
   - //shared
   - $compose.desktop.currentOs
   - $compose.material3
+  - $libs.miuix.ui
   - $compose.preview
   - $libs.nucleus.application
   - $libs.nucleus.window.tao

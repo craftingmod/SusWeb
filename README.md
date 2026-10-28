@@ -16,10 +16,14 @@ Use the run configurations provided by the run widget in your IDE's toolbar. You
 ### Nucleus WebView
 
 The shared screen uses `dev.nucleusframework:composewebview:1.0.3`. Desktop uses
-Nucleus 2.5.18 with the Tao backend and Material 3 window chrome. Versions are
+Nucleus 2.5.18 with the Tao backend and Miuix 0.9.4 for the shared UI. The Nucleus
+Material 3 window adapter uses colors from Miuix to match the title bar. Versions are
 pinned in `libs.versions.toml`. The initial page is `https://nucleusframework.dev`;
 change `HOME_URL` in `shared/src/App.kt` to use another page. The toolbar provides
 back, forward, reload, and home actions, with loading and error feedback.
+The toolbar wraps on narrow screens. Miuix follows the system light/dark theme;
+the embedded website controls its own appearance. Miuix's optional desktop window
+module is not used because Nucleus must own the Tao window hosting the WebView.
 
 On Windows, run `bun run start` (or `./kotlin.bat run -m desktopApp`). The WebView
 requires Microsoft Edge WebView2 Runtime. Android uses the system WebView and

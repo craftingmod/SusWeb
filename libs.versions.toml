@@ -4,6 +4,7 @@ androidx-activity-compose = "1.13.0"
 androidx-lifecycle = "2.11.0"
 nucleus = "2.5.18"
 nucleus-webview = "1.0.3"
+miuix = "0.9.4"
 ktor = "3.6.0"
 ksoup = "0.2.6"
 
@@ -16,6 +17,7 @@ nucleus-application = { module = "dev.nucleusframework:nucleus.nucleus-applicati
 nucleus-window-tao = { module = "dev.nucleusframework:nucleus.decorated-window-tao", version.ref = "nucleus" }
 nucleus-window-material3 = { module = "dev.nucleusframework:nucleus.decorated-window-material3", version.ref = "nucleus" }
 nucleus-webview = { module = "dev.nucleusframework:composewebview", version.ref = "nucleus-webview" }
+miuix-ui = { module = "top.yukonga.miuix.kmp:miuix-ui", version.ref = "miuix" }
 # HTTP handling
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
